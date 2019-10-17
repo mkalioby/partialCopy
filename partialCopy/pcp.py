@@ -139,6 +139,7 @@ def copy(src,dest,**kwargs):
 #			else:
 #				print("HDD is full, breaking....")
 #				break
+	partitions[len(partitions.keys()) + 1] = {"files": copy_list, "remaining": dest_limit}
 	for key in partitions:
 		rl_name = rsync_list + ".pcp." + str(key)
 		rl = open(rl_name, "w")
