@@ -5,13 +5,17 @@ A tool to copy big data to multiple smaller disks
 
 As the storage becomes larger in big projects, we need to a tool to break large folders (100 TBs) to smaller chunks to be allow to migrate to another location or storing it on tapes.
 
+## How does it work?
+
+The tool finds the best placement for the files and it creates a files list in --save-to directory which can be to rsync using `--files-from`
+parameter.
 ## Installation
 
 ```sudo pip install partialCopy```
 
 ## Usage
 ```
-pcp [-h] [-lg LOG] [-ls LST] [-ns NO_SCAN] [-rs RSYNC] src dest
+usage: pcp [-h] [-s SAVE_TO] [-fp FIND_PARAMS] src dest
 
 positional arguments:
   src                   Source Directory
@@ -19,19 +23,11 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  -lg LOG, --log LOG    Log File to use
-  -ls LST, --lst LST    List File to use
-  -ns, --no-scan        Don't rescan the folder, this needs a previous run
-  -rs RSYNC, --rsync RSYNC         Extra rsync parameters
+  -s SAVE_TO, --save-to SAVE_TO
+                        Where to save rsync list
+  -fp FIND_PARAMS, --find-params FIND_PARAMS
+                        Parameters to find command
 ```
-
-## Notes
-
-* A log file will be written as $src/.pcp_log (by default)
-* A list file will be written as $src/.pcp_lst (by default)
-* The conf file is /etc/pcp.cfg
-* A user can has his own config as ~/.pcp.cfg
-* When the dest is full, the exit code is -125
 
 # Contributors
 * [Zeeshan Ali Shah](https://github.com/zeeshanali)
