@@ -3,12 +3,11 @@ A tool to copy big data to multiple smaller disks
 
 ## Motivation
 
-As the storage becomes larger in big projects, we need to a tool to break large folders (100 TBs) to smaller chunks to be allow to migrate to another location or storing it on tapes.
+As the storage becomes larger in big projects, we need to a tool to break large folders (100 TBs) to smaller chunks, so we can migrate to another location or storing it on tapes.
 
 ## How does it work?
 
-The tool finds the best placement for the files and it creates a files list in --save-to directory which can be to rsync using `--files-from`
-parameter.
+The tool finds the best placement for the files and it creates a files list in --save-to directory which can be passed rsync using `--files-from` parameter.
 ## Installation
 
 ```sudo pip install partialCopy```
