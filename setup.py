@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(name='partialCopy',
-      version='0.5.1',
+      version='0.6.0',
       description='A tool to copy big data to multiple smaller disks ',
       author='Mohamed El-Kalioby',
       author_email='mkalioby@mkalioby.com',
