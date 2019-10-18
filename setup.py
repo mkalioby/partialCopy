@@ -1,8 +1,11 @@
-from distutils.core import setup
+from setuptools import setup, Extension
 
 setup(name='partialCopy',
-      version='0.6.0',
+      version='0.6.1',
       description='A tool to copy big data to multiple smaller disks ',
+      long_description=open("README.md").read(),
+      long_description_content_type="text/markdown",
+
       author='Mohamed El-Kalioby',
       author_email='mkalioby@mkalioby.com',
       url='https://github.com/mkalioby/partialCopy',
